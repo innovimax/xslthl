@@ -79,6 +79,8 @@ public class ConnectorSaxonEE {
 							int.class });
 			startElement.invoke(builder,
 					new Object[] { fpQname, AnyType.getInstance(), 0, 0 });
+		} catch (RuntimeException e) {
+    			throw e;	
 		} catch(Exception ex){
 			//Maybe Saxon 9.7.11 or newer
 			//public void startElement(/*@NotNull*/ NodeName elemName, SchemaType type, Location location, int properties) throws XPathException {
@@ -97,6 +99,8 @@ public class ConnectorSaxonEE {
 		try{
 			characters = builder.getClass().getMethod("characters", new Class[]{String.class, int.class, int.class});
 			characters.invoke(builder, new Object[]{text, 0, 0});
+		} catch (RuntimeException e) {
+    			throw e;			
 		} catch(Exception ex){
 			//Maybe Saxon 9.7.11 or newer
 			characters = builder.getClass().getMethod("characters", new Class[]{CharSequence.class, Class.forName("net.sf.saxon.expr.parser.Location"), int.class});
