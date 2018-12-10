@@ -52,4 +52,10 @@ Radu Coravu <radu_coravu@sync.ro>
 		<exponent>e</exponent>
 		<ignoreCase />
 	</highlighter>
+	<highlighter type="keywords">
+		<keyword>null</keyword>
+		<keyword>true</keyword>
+		<keyword>false</keyword>
+	</highlighter>
+<keyword>boolean</keyword>
 </highlighters>
